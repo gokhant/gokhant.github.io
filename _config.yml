@@ -7,7 +7,7 @@ url:
 
 # Jekyll configuration
 
-permalink:   /:categories/:title/
+#permalink:   /:categories/:title/
 markdown:    kramdown
 highlighter: rouge
 sass:

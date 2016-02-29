@@ -2,7 +2,12 @@
 layout: post
 title:  "Wtf is 52?"
 date:   2016-02-14 17:02:05 +0200
-categories: introduction 52
+categories: [introduction]
+
+tags:
+- introduction
+- 52
+
 ---
 
 <table>
@@ -30,11 +35,9 @@ categories: introduction 52
 	</tr>
 </table>	
 
-&nbsp;
-
-According to [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601), 52 is the number of weeks in most of the years and it’s also the number 
+According to [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601), **52** is the number of weeks in most of the years and it’s also the number 
 of blog posts I will try to reach in a year starting from this post’s publish date. 
-
-
-Make no worries, this post doesn’t count, i will count from 52 in a descending order for each title 
+\\
+\\
+Make no worries, this post doesn’t count, i will count from **52** in a descending order for each title 
 of my blog post. I sincerely hope to achieve not only the quantity but also a certain quality in my posts.

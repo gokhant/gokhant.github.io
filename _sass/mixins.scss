@@ -95,7 +95,10 @@
 
 /* Indentation variable */
 
+/*
 $indent-var: 0rem + ($doc-line-height / $doc-font-size);
+*/
+$indent-var: 0;
 
 /* ==========================================================================
    Gradient mixins
