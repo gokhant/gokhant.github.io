@@ -40,7 +40,12 @@ td.leftImage {
 }
 
 .credit {
-    text-align: center;
-    font-size: .75rem;
-    font-style: italic;
+	text-align: center;
+	font-size: .75rem;
+	font-style: italic;
+}
+
+.highlighter-rouge {
+	max-height: 300px;
+	overflow-y: scroll;
 }
