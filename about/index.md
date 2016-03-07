@@ -5,9 +5,9 @@ tags: [about, gokhan tuna]
 modified: 2016-02-22 06:02:05 +0200
 comments: true
 image:
-  feature: sample-image-2.jpg
-  credit: WeGraphics
-  creditlink: http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/
+  feature: about_top.png
+  credit: Created with Fotor
+  creditlink: http://banner.fotor.com/
 ---
 
 I will tell about myself here, someday...

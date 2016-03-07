@@ -60,7 +60,7 @@ but I will tell about azimuth and beamwidth later, in another post.
 Let's return back to the csv files, below is a sample for 3G. As you can see, there is one line for every hour for a cell, meaning each cell contains 24 lines of data which should be accumulated before being used.
 Imagine the size of the file with more than 100K cells! 
 
-~~~~
+~~~~ csv
 cell_id,data_time,pd0,pd1,pd2,pd3,pd4,...
 15,23.02.2016 00:00:00,1200,2400,400,300,142...
 15,23.02.2016 01:00:00,1000,2000,345,300,112...
@@ -127,9 +127,68 @@ For starters, here is the *pom.xml*, using not only Spring Batch but also Spring
 	</dependencies>
 </project>
 ~~~~
+\\
+\\
+Initial source codes are in **[gokhant@github](https://github.com/gokhant/spring-batch-example).**
+When I first wrote it, I saw that processor runs for every line in the file, as I stated above, lines are related with each other.
+I have to find a solution to **merge** the lines, but how? Stay tuned, coming up.
 
-Initial source codes will be here very shortly in my github account, I will update this post, stay tuned!
+~~~~ java
+@Configuration
+@EnableBatchProcessing
+public class BatchConfiguration {
 
+    @Autowired
+    private StepExecutionListener stepListener;
+
+    @Autowired
+    private JobBuilderFactory jobFactory;
+
+    @Autowired
+    private StepBuilderFactory stepFactory;
+
+    public BatchConfiguration() {
+    }
+
+    @Bean
+    public ItemReader<Measurement> csvFileReader() {
+        FlatFileItemReader<Measurement> reader = new FlatFileItemReader<Measurement>();
+        reader.setResource(new ClassPathResource("sample_measurement.csv"));
+        return reader;
+    }
+
+    @Bean
+    public ItemProcessor<Measurement, Result> csvItemProcessor() {
+        return new Processor();
+    }
+
+    @Bean
+    public ItemWriter<Result> resultWriter() {
+        return new ResultWriter();
+    }
+
+    @Bean
+    public Job measurementProcessorJob(Step step, JobExecutionListener listener) {
+        return jobFactory.get("JobProcessMeasurement")
+                .incrementer(new RunIdIncrementer())
+                .listener(listener)
+                .flow(step)
+                .end()
+                .build();
+    }
+
+    @Bean
+    public Step step1(ItemReader<Measurement> reader, ItemWriter<Result> writer, ItemProcessor<Measurement, Result> processor) {
+        Step step = stepFactory.get("FirstStep")
+                .<Measurement, Result> chunk(1)
+                .reader(reader)
+                .processor(processor)
+                .writer(writer)
+                .listener(stepListener)
+                .build();
+        return step;
+    }
+~~~~
 
 - - - - - -
 
