@@ -2,6 +2,7 @@
 layout: post
 title:  "50-Batch"
 date:   2016-02-28 15:02:05 +0200
+excerpt: "A cafe called Batch but Spring Batch"
 categories: 
 - programming
 - java

@@ -2,7 +2,8 @@
 
 title:            fifty-two
 locale:           en_US
-url:              
+#url:              http://localhost:4000
+url:              http://gokhant.github.io
 
 
 # Jekyll configuration
@@ -23,7 +24,12 @@ kramdown:
   entity_output: as_char
   toc_levels: 1..6
   enable_coderay: false
-
+  syntax_highlighter_opts:
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
 
 # Octopress
 
@@ -57,7 +63,7 @@ owner:
   bing-verify:
   github: gokhant
   stackoverflow: "48479/gokhant"
-  linkedin: #username
+  linkedin: gokhantuna
   xing: #username
   instagram: #username
   lastfm: #username
