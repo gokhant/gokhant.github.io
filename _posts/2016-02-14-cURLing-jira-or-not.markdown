@@ -30,7 +30,8 @@ I will use Atlassian's DEMO project as a showcase. First of all; let's take all 
 project by calling [versions rest api](https://jira.atlassian.com/rest/api/latest/project/DEMO/versions):
 \\
 &nbsp;
-{% highlight json linenos=table %}
+
+~~~~ 
 [
 {
 	self: "https://jira.atlassian.com/rest/api/latest/version/12254",
@@ -82,7 +83,7 @@ project by calling [versions rest api](https://jira.atlassian.com/rest/api/lates
 	projectId: 10820
 }
 ]
-{% endhighlight %}
+~~~~
 
 The unarchived *(archived:false)* and unreleased *(released:false)* versions can easily be extracted from 
 the JSON output above. For the appropriate versions, changing archived property is as simple as sending 

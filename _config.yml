@@ -26,9 +26,9 @@ kramdown:
   enable_coderay: false
   syntax_highlighter_opts:
     span:
-      line_numbers: false
-    block:
       line_numbers: true
+    block:
+      line_numbers: false
       start_line: 1
 
 # Octopress
